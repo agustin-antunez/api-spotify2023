@@ -1,16 +1,8 @@
 
-const express = require('express')
-const app = express()
-const port = 4000
+require('dotenv').config()
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+const Server = require("./models/server");
 
-app.get('/home', (req, res) => {
-    res.send('Estoy en casa!')
-  })
+const svr = new Server();
 
-app.listen(port, () => {
-  console.log(`escuchando en el puerto ${port}`)
-})
+svr.listen();
